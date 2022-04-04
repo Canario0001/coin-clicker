@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="src/main.js"></script>
+        <title>Empreendedorismo Ultimate Pro Max</title>
+        <!-- Código criado por Canario0001. -->
+        <!-- A distribuição e modificação é permitida contanto -->
+        <!-- que não venda ou passe como sua. -->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+        <div class="lojinha">
+            <h1>LOJÃO DO <img src="assets/nariz.png"><img src="assets/animal-ua.png"></h1><br>
+            <button onclick="buyProle()">Funcionários: <span id="prole">0</span><br>Preço: <span id="sal">950</span><br>Moedas por segundo: 1</button><br><br>
+            <button onclick="buyMina()">Minas de ouro: <span id="mina-qua">0</span><br>Preço: <span id="preco-mina">3000</span><br>Moedas por segundo: 50</button><br><br>
+            <button onclick="buyBanco()">Bancos: <span id="qbank">0</span><br>Preço: <span id="cbank">320000</span><br>Moedas por segundo: 2000</button><br><br>
+            <button onclick="buyEmpresa()">Big Techs: <span id="empres">0</span><br>Preço: <span id="pc-gigante">80000000000000</span></button><br<br>
+        </div>
+        <div class="moeda-e-quantia">
+            <p>Moedas: <span id="moeda">0</span></p>
+            <p class="mps">Moedas por segundo: <span id="mps">0</span></p>
+            <img alt="moeda girando" src="assets/spinning-coin.gif" id="moedaSpin" onclick="addMoeda(1)">
+        </div>
+        <button class="save-progress" onclick="save()">Clique aqui para salvar o progresso.</button><br>
+        <button class="load-progress" onclick="load()">Clique aqui para carregar o progresso.</button>
+    </body>
+</html>

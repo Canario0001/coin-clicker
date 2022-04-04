@@ -1,0 +1,53 @@
+* {
+    margin: 0px
+}
+body {
+    background-color: #332e2e;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button {
+    cursor: pointer;
+}
+.moeda-e-quantia {
+    position: fixed;
+    top: 25%;
+    right: 45%;
+    font-size: 200%;
+}
+.moeda-e-quantia p {color: orange;}
+.moeda-e-quantia p.mps {
+    color: orange;
+    font-size: 50%;
+}
+.moeda-e-quantia span {color: yellow;}
+#moedaSpin {
+    cursor: pointer;
+    width: 128px;
+    height: 128px;
+}
+button.save-progress {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+button.load-progress {
+    position: absolute;
+    top: 45px;
+    right: 25px;
+}
+.lojinha {
+    position: absolute;
+    top: 2%;
+    left: 3%;
+}
+.lojinha h1 {color: orange;}
+.lojinha img {
+    width: 32px;
+    height: 32px;
+}
+.lojinha #prole, #sal, #empres, #pc-gigante, #mina-qua, #preco-mina {
+    color: blue;
+}
