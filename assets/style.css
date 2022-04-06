@@ -1,5 +1,5 @@
 * {
-    margin: 0px
+    margin: 0px;
 }
 body {
     background-color: #332e2e;
@@ -48,6 +48,6 @@ button.load-progress {
     width: 32px;
     height: 32px;
 }
-.lojinha #prole, #sal, #empres, #pc-gigante, #mina-qua, #preco-mina {
+.lojinha #prole, #sal, #empres, #pc-gigante, #mina-qua, #preco-mina, #cbank, #qbank {
     color: blue;
 }
