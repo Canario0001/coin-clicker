@@ -14,12 +14,17 @@ var bancoCusto = 320000;
 var bigTech = 0;
 var bigTechCusto = 80000000000000;
 
-window.onload = function() {
+window.onload = () => {
     load();
 }
-window.onbeforeunload = function() {
+window.onbeforeunload = () => {
     save();
 }
+window.addEventListener('keyup', (event) => {
+    if (event.code == "Space") {
+        addMoeda(1);
+    }
+})
 
 function addMoeda(quantia) {
     moedas += quantia;
@@ -82,7 +87,7 @@ function buyEmpresa() {
     }
 }
 
-setInterval(function() {
+setInterval(() => {
     addMoeda(prole);
     addMoeda(minaOuro*50);
     addMoeda(banco*2000);
