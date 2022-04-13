@@ -14,11 +14,11 @@ This is my first game project with HTML and JS. I did in less than 2 days, and I
 ### Português
 
 Updates da versão 1.2:
-    - Aperte a barra de espaço e ganhe moedas (segurar não adianta)!
-    - Limpeza no código (JS) de forma leve
+- Aperte a barra de espaço e ganhe moedas (segurar não adianta)!
+- Limpeza no código (JS) de forma leve
 
 ### English
 
 Updates on version 1.2:
-    - Press space bar and gain coins (holding does nothing)!
-    - Light code cleanup (JS)
+- Press space bar and gain coins (holding does nothing)!
+- Light code cleanup (JS)
