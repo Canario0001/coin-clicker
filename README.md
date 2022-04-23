@@ -17,8 +17,16 @@ Updates da versão 1.2:
 - Aperte a barra de espaço e ganhe moedas (segurar não adianta)!
 - Limpeza no código (JS) de forma leve
 
+Updates da versão 1.2.1:
+- Agora é possível resetar seu progresso
+- Limpeza no código (JS)
+
 ### English
 
 Updates on version 1.2:
 - Press space bar and gain coins (holding does nothing)!
 - Light code cleanup (JS)
+
+Updates on version 1.2.1:
+- Now it is possible to reset your progress
+- Code cleanup (JS)
