@@ -38,6 +38,11 @@ button.load-progress {
     top: 45px;
     right: 25px;
 }
+button.reset-progress {
+    position: absolute;
+    top: 70px;
+    right: 25px;
+}
 .lojinha {
     position: absolute;
     top: 2%;
@@ -50,4 +55,7 @@ button.load-progress {
 }
 .lojinha #prole, #sal, #empres, #pc-gigante, #mina-qua, #preco-mina, #cbank, #qbank {
     color: blue;
+}
+.cor-ver {
+    color: red;
 }
