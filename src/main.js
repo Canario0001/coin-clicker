@@ -24,11 +24,13 @@ window.addEventListener('keyup', (event) => {
     if (event.code == "Space") {
         addMoeda(1);
     }
-})
+});
+
+function grab(id) {return document.getElementById(id);}
 
 function addMoeda(quantia) {
     moedas += quantia;
-    document.getElementById('moeda').innerHTML = moedas;
+    grab('moeda').innerHTML = moedas;
 }
 
 function buyProle() {
@@ -36,9 +38,9 @@ function buyProle() {
         moedas -= proleCusto;
         prole += 1;
         proleCusto = Math.round(proleCusto * 1.10);
-        document.getElementById('moeda').innerHTML = moedas;
-        document.getElementById('prole').innerHTML = prole;
-        document.getElementById('sal').innerHTML = proleCusto;
+        grab('moeda').innerHTML = moedas;
+        grab('prole').innerHTML = prole;
+        grab('sal').innerHTML = proleCusto;
     }
     else {
         alert('Você não tem moedas para comprar.');
@@ -50,9 +52,9 @@ function buyMina() {
         moedas -= minaOuroCusto;
         minaOuro += 1;
         minaOuroCusto = Math.round(minaOuroCusto * 1.10);
-        document.getElementById('moeda').innerHTML = moedas;
-        document.getElementById('mina-qua').innerHTML = minaOuro;
-        document.getElementById('preco-mina').innerHTML = minaOuroCusto;
+        grab('moeda').innerHTML = moedas;
+        grab('mina-qua').innerHTML = minaOuro;
+        grab('preco-mina').innerHTML = minaOuroCusto;
     }
     else {
         alert('Você não tem moedas para comprar.');
@@ -64,9 +66,9 @@ function buyBanco() {
         moedas -= bancoCusto;
         banco += 1;
         bancoCusto = Math.round(bancoCusto * 1.20);
-        document.getElementById('moeda').innerHTML = moedas;
-        document.getElementById('qbank').innerHTML = banco;
-        document.getElementById('cbank').innerHTML = bancoCusto;
+        grab('moeda').innerHTML = moedas;
+        grab('qbank').innerHTML = banco;
+        grab('cbank').innerHTML = bancoCusto;
     }
     else {
         alert('Você não tem moedas para comprar.');
@@ -77,9 +79,9 @@ function buyEmpresa() {
     if (moedas >= 80000000000000) {
         moedas -= bigTechCusto;
         bigTech += 1;
-        document.getElementById('moeda').innerHTML = moedas;
-        document.getElementById('empres').innerHTML = bigTech;
-        document.getElementById('pc-gigante').innerHTML = bigTechCusto;
+        grab('moeda').innerHTML = moedas;
+        grab('empres').innerHTML = bigTech;
+        grab('pc-gigante').innerHTML = bigTechCusto;
         alert('Parabéns! Você ganhou. Pode continuar jogando, se quiser.');
     }
     else {
@@ -91,15 +93,14 @@ setInterval(() => {
     addMoeda(prole);
     addMoeda(minaOuro*50);
     addMoeda(banco*2000);
-    document.getElementById('moeda').innerHTML = moedas;
+    grab('moeda').innerHTML = moedas;
     if (moedas === 1) {document.title = `${moedas} moeda - Empreendedorismo Ultimate Pro Max`;    }
-    else {document.title = moedas + " moedas - Empreendedorismo Ultimate Pro Max";}
-    MoedasPS();
-}, 1000)
+    else {document.title = `${moedas} moedas - Empreendedorismo Ultimate Pro Max`;}
+}, 1000);
 
-function MoedasPS() {
-    document.getElementById('mps').innerHTML = prole + (minaOuro * 50) + (banco * 2000);
-}
+setInterval(() => {
+    grab('mps').innerHTML = prole + (minaOuro * 50) + (banco * 2000);
+}, 200);
 
 function save() {
     // q -> quantidade
@@ -125,34 +126,62 @@ function load() {
     if (typeof baz.qmoeda !== undefined) moedas = baz.qmoeda;
     if (typeof baz.qworker !== undefined) {
         prole = baz.qworker;
-        document.getElementById("prole").innerHTML = prole;
+        grab("prole").innerHTML = prole;
     }
     if (typeof baz.cworker !== undefined) {
         proleCusto = baz.cworker;
-        document.getElementById("sal").innerHTML = proleCusto;
+        grab("sal").innerHTML = proleCusto;
     }
     if (typeof baz.qmina !== undefined) {
         minaOuro = baz.qmina;
-        document.getElementById("mina-qua").innerHTML = minaOuro;
+        grab("mina-qua").innerHTML = minaOuro;
     }
     if (typeof baz.cmina !== undefined) {
         minaOuroCusto = baz.cmina;
-        document.getElementById("preco-mina").innerHTML = minaOuroCusto;
+        grab("preco-mina").innerHTML = minaOuroCusto;
     }
     if (typeof baz.qbanco !== undefined) {
         banco = baz.qbanco;
-        document.getElementById("qbank").innerHTML = banco;
+        grab("qbank").innerHTML = banco;
     }
     if (typeof baz.cbanco !== undefined) {
         bancoCusto = baz.cbanco;
-        document.getElementById("cbank").innerHTML = bancoCusto;
+        grab("cbank").innerHTML = bancoCusto;
     }
     if (typeof baz.qtech !== undefined) {
         bigTech = baz.qtech;
-        document.getElementById("empres").innerHTML = bigTech;
+        grab("empres").innerHTML = bigTech;
     }
     if (typeof baz.ctech !== undefined) {
         bigTechCusto = baz.ctech;
-        document.getElementById("pc-gigante").innerHTML = bigTechCusto;
+        grab("pc-gigante").innerHTML = bigTechCusto;
+    }
+}
+
+function reset() {
+    const pri = confirm('Você tem certeza de que quer deletar seu progresso?');
+    if (pri == true) {
+        const seg = confirm('ÚLTIMA CHANCE! TEM CERTEZA DE QUE QUER RESETAR SEU PROGRESSO? ELE NÃO SERÁ RECUPERADO.');
+        if (seg == true) {
+            moedas = 0;
+            proleCusto = 950;
+            prole = 0;
+            minaOuro = 0;
+            minaOuroCusto = 3000;
+            banco = 0;
+            bancoCusto = 320000;
+            bigTech = 0;
+            bigTechCusto = 80000000000000;
+            localStorage.clear();
+            grab('prole').innerHTML = prole;
+            grab('sal').innerHTML = proleCusto;
+            grab('mina-qua').innerHTML = minaOuro;
+            grab('preco-mina').innerHTML = minaOuroCusto;
+            grab('qbank').innerHTML = banco;
+            grab('cbank').innerHTML = bancoCusto;
+            grab('empres').innerHTML = bigTech;
+            grab('pc-gigante').innerHTML = bigTechCusto;
+            alert('Progresso resetado.');
+        }
     }
 }
