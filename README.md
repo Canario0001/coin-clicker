@@ -21,6 +21,9 @@ Updates da versão 1.2.1:
 - Agora é possível resetar seu progresso
 - Limpeza no código (JS)
 
+Update da versão 1.2.2:
+- Fonte padrão definida
+
 ### English
 
 Updates on version 1.2:
@@ -30,3 +33,6 @@ Updates on version 1.2:
 Updates on version 1.2.1:
 - Now it is possible to reset your progress
 - Code cleanup (JS)
+
+Update on version 1.2.2:
+- Defined standard font
